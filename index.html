@@ -3,270 +3,253 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dap – Habit Duels With Friends</title>
+  <title>Dap – Habit Duels with Friends</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --orange: #F97316;
-      --black: #0F0F0F;
-      --dark-gray: #1A1A1A;
-      --gray: #999;
-      --white: #fff;
-      --green: #22C55E;
-      --red: #EF4444;
-      --gold: #FFD700;
-    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--black);
-      color: var(--white);
+      background: #0F0F0F;
+      color: #E5E5E5;
       overflow-x: hidden;
     }
 
-    /* HEADER */
-    header {
-      width: 100%;
-      padding: 20px 24px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: rgba(15, 15, 15, 0.85);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
+    /* NAVIGATION */
+    nav.nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #222;
+      padding: 24px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
+
     .logo {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 800;
-      letter-spacing: -2px;
-      color: var(--orange);
+      letter-spacing: -1px;
+      color: #F97316;
     }
 
-    /* NAVIGATION */
-    nav {
+    .nav-links {
       display: flex;
-      gap: 24px;
-      align-items: center;
+      gap: 28px;
+      list-style: none;
     }
 
-    nav a {
-      color: var(--white);
-      font-size: 16px;
+    .nav-links a {
+      color: #E5E5E5;
       text-decoration: none;
-      opacity: 0.8;
-      transition: 0.2s ease;
+      font-weight: 500;
+      transition: color 0.2s;
     }
-    nav a:hover { opacity: 1; }
 
-    /* MOBILE MENU */
-    .mobile-menu-btn {
+    .nav-links a:hover {
+      color: #F97316;
+    }
+
+    .menu-toggle {
       display: none;
       background: none;
       border: none;
+      font-size: 32px;
+      color: #fff;
       cursor: pointer;
     }
-    .mobile-menu-btn div {
-      width: 28px;
-      height: 3px;
-      background: var(--white);
-      margin: 6px 0;
-      transition: 0.3s;
-    }
 
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 75%;
-      height: 100vh;
-      background: var(--dark-gray);
-      padding: 80px 24px;
-      transform: translateX(100%);
-      transition: 0.3s ease;
-    }
+    /* HERO */
 
-    .mobile-nav a {
-      display: block;
-      margin: 20px 0;
-      color: var(--white);
-      text-decoration: none;
-      font-size: 20px;
-      opacity: 0.9;
-    }
-
-    .mobile-nav.open { transform: translateX(0); }
-
-    @media (max-width: 820px) {
-      nav { display: none; }
-      .mobile-menu-btn { display: block; }
-    }
-
-    /* HERO SECTION */
     .hero {
-      padding-top: 160px;
-      padding-bottom: 140px;
       text-align: center;
-      max-width: 800px;
+      padding: 80px 20px 60px;
+      max-width: 900px;
       margin: auto;
-      animation: fadeIn 1s ease;
     }
+
     .hero h1 {
-      font-size: 56px;
+      font-size: 3.2rem;
       font-weight: 800;
-      letter-spacing: -2px;
-      line-height: 1.1;
-      margin-bottom: 20px;
+      background: linear-gradient(135deg, #F97316, #FB923C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
     }
-    .hero p {
-      font-size: 20px;
-      opacity: 0.8;
+
+    .tagline {
+      color: #B5B5B5;
+      font-size: 1.2rem;
       margin-bottom: 40px;
     }
 
     .cta-btn {
-      background: var(--orange);
       padding: 16px 32px;
-      border-radius: 12px;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--black);
+      border-radius: 14px;
+      background: #F97316;
+      color: #ffffff;
       text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
       display: inline-block;
-      transition: 0.25s ease;
-      animation: slideUp 1s ease;
-    }
-    .cta-btn:hover { transform: translateY(-3px); }
-
-    /* FEATURE SECTIONS */
-    .section {
-      max-width: 1000px;
-      margin: 120px auto;
-      padding: 0 24px;
-    }
-    .section h2 {
-      font-size: 40px;
-      font-weight: 700;
-      margin-bottom: 24px;
-    }
-    .section p {
-      font-size: 18px;
-      opacity: 0.8;
-      max-width: 700px;
-      margin-bottom: 40px;
     }
 
-    .feature-grid {
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+    }
+
+    /* FEATURES */
+
+    .features {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
     }
-    .feature {
-      background: var(--dark-gray);
+
+    .feature-card {
+      background: #1A1A1A;
+      border: 1px solid rgba(255, 255, 255, 0.06);
       padding: 28px;
       border-radius: 18px;
-      border: 1px solid #222;
-      transition: 0.25s ease;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
     }
-    .feature:hover { transform: translateY(-5px); }
 
-    .feature h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: var(--orange);
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: #F97316;
     }
-    .feature p { opacity: 0.75; }
 
-    /* ANIMATIONS */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .feature-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #fff;
     }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    .feature-desc {
+      color: #999;
+      font-size: 0.95rem;
     }
 
     /* FOOTER */
+
     footer {
-      margin-top: 160px;
-      padding: 40px 24px;
+      padding: 60px 20px;
       text-align: center;
-      border-top: 1px solid #222;
-      opacity: 0.7;
+      color: #777;
+    }
+
+    footer a {
+      color: #777;
+      margin: 0 14px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: #F97316;
+    }
+
+    /* MOBILE MENU */
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 72px;
+        right: 0;
+        width: 70%;
+        height: calc(100% - 72px);
+        background: #1A1A1A;
+        flex-direction: column;
+        padding: 40px 24px;
+        gap: 20px;
+        list-style: none;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .nav-links.open {
+        transform: translateX(0);
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="logo">dap</div>
-  <nav>
-    <a href="#features">Features</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="logo">dap</div>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#features">Features</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="mailto:support@getdap.app">Contact</a></li>
+    </ul>
   </nav>
 
-  <button class="mobile-menu-btn" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
-  </button>
-</header>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Habit Duels With Friends</h1>
+    <p class="tagline">Challenge a friend. Check in with a photo. Build better habits together — and win.</p>
 
-<div class="mobile-nav" id="mobileNav">
-  <a href="#features" onclick="toggleMenu()">Features</a>
-  <a href="privacy.html" onclick="toggleMenu()">Privacy</a>
-  <a href="terms.html" onclick="toggleMenu()">Terms</a>
-</div>
+    <a class="cta-btn">Coming Soon on iOS</a>
+  </section>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Habit Duels With Friends</h1>
-  <p>Challenge a friend. Prove you showed up. Win the duel.</p>
-  <a href="#features" class="cta-btn">See How It Works</a>
-</section>
+  <!-- FEATURES -->
+  <section id="features" class="features">
 
-<!-- FEATURES -->
-<section class="section" id="features">
-  <h2>Why Dap Works</h2>
-  <p>Accountability through friendly competition. Simple rules. Clear stakes. Real results.</p>
-
-  <div class="feature-grid">
-    <div class="feature">
-      <h3>Head‑to‑Head Habits</h3>
-      <p>You and a friend commit to showing up daily. Whoever has more check-ins wins.</p>
+    <div class="feature-card">
+      <div class="feature-title">Photo Proof</div>
+      <div class="feature-desc">Daily check-ins require actual proof — not just checking a box.</div>
     </div>
 
-    <div class="feature">
-      <h3>Photo Proof</h3>
-      <p>No cheating. Check in with a daily photo so your opponent knows you did the work.</p>
+    <div class="feature-card">
+      <div class="feature-title">1v1 Duels</div>
+      <div class="feature-desc">Friendly competition that pushes you harder than solo habit apps.</div>
     </div>
 
-    <div class="feature">
-      <h3>Wagers</h3>
-      <p>Raise the stakes. Loser buys coffee. Winner earns bragging rights.</p>
+    <div class="feature-card">
+      <div class="feature-title">Streak Tracking</div>
+      <div class="feature-desc">Stay ahead, catch up, or fall behind — the pressure keeps you going.</div>
     </div>
 
-    <div class="feature">
-      <h3>Simple, Fun, Competitive</h3>
-      <p>Dap turns habit-building into a game you actually want to play.</p>
+    <div class="feature-card">
+      <div class="feature-title">Wagers</div>
+      <div class="feature-desc">Add stakes to make it real. Loser buys coffee — honor system.</div>
     </div>
-  </div>
-</section>
 
-<footer>
-  © 2025 Dap. All rights reserved.
-</footer>
+  </section>
 
-<script>
-function toggleMenu() {
-  const nav = document.getElementById('mobileNav');
-  nav.classList.toggle('open');
-}
-</script>
+  <!-- FOOTER -->
+  <footer>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:support@getdap.app">Contact</a>
+  </footer>
+
+  <!-- MOBILE MENU SCRIPT -->
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  </script>
 
 </body>
 </html>
