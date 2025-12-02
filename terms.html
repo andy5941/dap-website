@@ -3,152 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dap • Terms of Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Terms of Service — Dap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: "Inter", sans-serif;
+      padding: 40px 20px;
+      font-family: 'Inter', sans-serif;
       background: #0F0F0F;
-      color: #FFFFFF;
+      color: #E5E5E5;
       line-height: 1.6;
-      padding: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      animation: fadeIn 0.8s ease;
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
     h1 {
-      font-size: 40px;
-      color: #F97316;
-      margin-bottom: 20px;
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, #F97316, #FB923C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     h2 {
-      margin-top: 40px;
-      font-size: 26px;
-      color: #FFFFFF;
-      border-left: 4px solid #F97316;
-      padding-left: 12px;
+      margin-top: 32px;
     }
 
     p {
-      color: #CCCCCC;
-      margin: 16px 0;
+      color: #B5B5B5;
+      margin-bottom: 16px;
     }
 
-    ul { color: #CCCCCC; margin-left: 20px; }
+    a.back {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 22px;
+      background: #1A1A1A;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: #E5E5E5;
+      text-decoration: none;
+      transition: 0.2s;
+    }
 
-    a { color: #F97316; text-decoration: none; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    a.back:hover {
+      border-color: #F97316;
+      color: #F97316;
     }
-    /* Mobile Menu */
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-    }
-    .nav {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px;
-    }
-    .nav-links{
-      display:flex;
-      gap:24px;
-      list-style:none;
-    }
-    @media(max-width:768px){
-      .nav-links{
-        position:fixed;
-        top:70px;
-        right:0;
-        background:#1A1A1A;
-        width:70%;
-        height:calc(100% - 70px);
-        flex-direction:column;
-        padding:40px 20px;
-        gap:20px;
-        transform:translateX(100%);
-        transition:transform 0.3s ease;
-      }
-      body.menu-open .nav-links{
-        transform:translateX(0);
-      }
-      .menu-toggle{display:block;}
-    }
-</style>
+  </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="logo">dap</div>
-    <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰</button>
-    <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
-      <li><a href="terms.html">Terms</a></li>
-      <li><a href="mailto:support@getdap.app">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="container">
-    <h1>Terms of Service</h1>
-    <p>Last updated: January 2025</p>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>
-      By using the Dap mobile application ("Service"), you agree to these Terms of
-      Service. If you do not agree, do not use the app.
-    </p>
+  <h1>Terms of Service</h1>
 
-    <h2>2. Use of the App</h2>
-    <p>Users may participate in habit "duels" with friends, upload photo check-ins, and track progress.</p>
-    <p>You agree not to:</p>
-    <ul>
-      <li>Upload harmful, inappropriate, or illegal content</li>
-      <li>Harass or abuse other users</li>
-      <li>Exploit or misuse the service in any harmful way</li>
-    </ul>
+  <p>Last updated: [DATE]</p>
 
-    <h2>3. User Content</h2>
-    <p>
-      You retain ownership of your uploaded photos and content. You grant Dap a
-      limited license to display this content within the app solely for the purpose
-      of functionality.
-    </p>
+  <h2>1. Acceptance of Terms</h2>
+  <p>By using Dap, you agree to these Terms of Service.</p>
 
-    <h2>4. Wagers and Bets</h2>
-    <p>
-      Dap's wager feature is informal and honor-based. The app does not process
-      payments, enforce bets, or handle financial transactions.
-    </p>
+  <h2>2. Use of the App</h2>
+  <p>You may challenge friends, upload check-in photos, and engage in habit duels. You agree not to upload harmful, illegal, or inappropriate content.</p>
 
-    <h2>5. Privacy</h2>
-    <p>Please review our <a href="privacy.html">Privacy Policy</a> for details on data usage.</p>
+  <h2>3. Wagers</h2>
+  <p>All wagers are informal, honor-based agreements between users. Dap is not responsible for enforcing or facilitating payments.</p>
 
-    <h2>6. Termination</h2>
-    <p>
-      We reserve the right to suspend or terminate accounts that violate these
-      Terms.
-    </p>
+  <h2>4. User Content</h2>
+  <p>You retain ownership of your photos and submissions. You grant us the limited right to display them within the app for your duels.</p>
 
-    <h2>7. Disclaimer</h2>
-    <p>
-      The Service is provided "as is" without warranties of any kind. We are not
-      responsible for data loss, outages, or user-generated content.
-    </p>
+  <h2>5. Termination</h2>
+  <p>We may suspend access to the service for violations of these terms.</p>
 
-    <h2>8. Contact</h2>
-    <p>If you have questions, contact: <a href="mailto:support@yourdomain.com">support@yourdomain.com</a></p>
-  </div>
+  <h2>6. Contact</h2>
+  <p>Questions? Email support@getdap.app.</p>
+
+  <a class="back" href="/index.html">← Back to dap</a>
+
 </body>
 </html>
