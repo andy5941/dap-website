@@ -9,7 +9,11 @@
   <meta property="og:description" content="Challenge your friends to habit duels. Prove you showed up. Build better habits together.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://getdap.app">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>'">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -24,51 +28,130 @@
       padding: 40px 20px;
       text-align: center;
     }
-    .logo { font-size: 4rem; margin-bottom: 16px; }
+    .logo {
+      font-size: 4rem;
+      margin-bottom: 16px;
+    }
     h1 {
-      font-size: 3rem; font-weight: 800; margin-bottom: 8px;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 8px;
       background: linear-gradient(135deg, #F97316, #FB923C);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .tagline { font-size: 1.25rem; color: #888; margin-bottom: 48px; max-width: 400px; }
-    .features { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-bottom: 48px; max-width: 600px; }
-    .feature { background: #1A1A1A; border-radius: 16px; padding: 24px; width: 170px; border: 1px solid rgba(255,255,255,0.06); }
-    .feature-icon { font-size: 2rem; margin-bottom: 12px; }
-    .feature-text { color: #B0B0B0; font-size: 0.95rem; }
-    .cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #F97316; color: white; font-weight: 600;
-      font-size: 1.1rem; padding: 16px 32px;
-      border-radius: 12px; text-decoration: none;
-      margin-bottom: 48px; transition: transform 0.2s, box-shadow 0.2s;
+    .tagline {
+      font-size: 1.25rem;
+      color: #888;
+      margin-bottom: 48px;
+      max-width: 400px;
     }
-    .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3); }
-    .coming-soon { background: #262626; color: #888; cursor: default; }
-    .coming-soon:hover { transform: none; box-shadow: none; }
-    .footer { margin-top: auto; padding-top: 40px; display: flex; gap: 24px; }
-    .footer a { color: #666; text-decoration: none; font-size: 0.9rem; }
-    .footer a:hover { color: #F97316; }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 48px;
+      max-width: 600px;
+    }
+    .feature {
+      background: #1A1A1A;
+      border-radius: 16px;
+      padding: 24px;
+      width: 170px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .feature-text {
+      color: #B0B0B0;
+      font-size: 0.95rem;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #F97316;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-bottom: 48px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+    }
+    .coming-soon {
+      background: #262626;
+      color: #888;
+      cursor: default;
+    }
+    .coming-soon:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    .footer {
+      margin-top: auto;
+      padding-top: 40px;
+      display: flex;
+      gap: 24px;
+    }
+    .footer a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .footer a:hover {
+      color: #F97316;
+    }
   </style>
 </head>
+
 <body>
   <div class="logo">⚔️</div>
+
   <h1>Dap</h1>
   <p class="tagline">Challenge your friends to habit duels. Prove you showed up. Build better habits together.</p>
 
   <div class="features">
-    <div class="feature"><div class="feature-icon">📸</div><div class="feature-text">Photo proof check-ins</div></div>
-    <div class="feature"><div class="feature-icon">🏆</div><div class="feature-text">Friendly wagers</div></div>
-    <div class="feature"><div class="feature-icon">🔥</div><div class="feature-text">Streak tracking</div></div>
-    <div class="feature"><div class="feature-icon">👊</div><div class="feature-text">Social accountability</div></div>
+    <div class="feature">
+      <div class="feature-icon">📸</div>
+      <div class="feature-text">Photo proof check-ins</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🏆</div>
+      <div class="feature-text">Friendly wagers</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔥</div>
+      <div class="feature-text">Streak tracking</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">👊</div>
+      <div class="feature-text">Social accountability</div>
+    </div>
   </div>
 
-  <a href="#" class="cta coming-soon"><span>Coming Soon to iOS</span></a>
+  <a href="#" class="cta coming-soon">
+    <span>Coming Soon to iOS</span>
+  </a>
 
+  <!-- 
+    IMPORTANT:
+    These links work on:
+      • GitHub Pages (project site)
+      • Custom domain (root site)
+  -->
   <div class="footer">
-    <a href="./privacy.html">Privacy Policy</a>
-    <a href="./terms.html">Terms of Service</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
     <a href="mailto:support@getdap.app">Contact</a>
   </div>
 </body>
