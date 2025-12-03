@@ -137,6 +137,98 @@
       font-size: 0.95rem;
     }
 
+    /* EMAIL SIGNUP SECTION */
+    
+    .waitlist {
+      max-width: 600px;
+      margin: 100px auto 80px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .waitlist h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .waitlist p {
+      color: #999;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .email-input {
+      flex: 1;
+      padding: 16px 20px;
+      font-size: 16px;
+      border: 2px solid #2C2C2E;
+      border-radius: 12px;
+      background: #1A1A1A;
+      color: white;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s;
+    }
+
+    .email-input:focus {
+      border-color: #F97316;
+    }
+
+    .email-input::placeholder {
+      color: #666;
+    }
+
+    .email-submit {
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      background: #F97316;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .email-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+    }
+
+    .email-submit:active {
+      transform: translateY(0);
+    }
+
+    .email-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 20px;
+      padding: 16px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      color: #22C55E;
+      font-weight: 500;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
     /* FOOTER */
 
     footer {
@@ -156,7 +248,7 @@
       color: #F97316;
     }
 
-    /* MOBILE MENU */
+    /* MOBILE RESPONSIVE */
 
     @media (max-width: 768px) {
       .menu-toggle {
@@ -180,6 +272,22 @@
 
       .nav-links.open {
         transform: translateX(0);
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .waitlist h2 {
+        font-size: 2rem;
+      }
+
+      .email-form {
+        flex-direction: column;
+      }
+
+      .email-submit {
+        width: 100%;
       }
     }
   </style>
@@ -206,7 +314,7 @@
     <h1>Habit Duels With Friends</h1>
     <p class="tagline">Challenge a friend. Check in with a photo. Build better habits together — and win.</p>
 
-    <a class="cta-btn">Coming Soon on iOS</a>
+    <a class="cta-btn" href="#waitlist">Join the Waitlist 🔥</a>
   </section>
 
   <!-- FEATURES -->
@@ -234,6 +342,35 @@
 
   </section>
 
+  <!-- EMAIL SIGNUP WITH FORMSPREE -->
+  <section id="waitlist" class="waitlist">
+    <h2>Get Early Access</h2>
+    <p>Be the first to know when Dap launches on iOS. Join the waitlist.</p>
+
+    <!-- FORMSPREE FORM -->
+    <form 
+      class="email-form" 
+      id="emailForm"
+      action="https://formspree.io/f/xovgwrea" 
+      method="POST"
+    >
+      <input 
+        type="email" 
+        name="email"
+        class="email-input" 
+        placeholder="Enter your email"
+        required
+      />
+      <button type="submit" class="email-submit" id="submitBtn">
+        Get Notified
+      </button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      🎉 Thanks! You're on the list. We'll email you when we launch.
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <a href="privacy.html">Privacy Policy</a>
@@ -241,13 +378,52 @@
     <a href="mailto:support@getdap.app">Contact</a>
   </footer>
 
-  <!-- MOBILE MENU SCRIPT -->
+  <!-- SCRIPTS -->
   <script>
+    // Mobile menu toggle
     const toggle = document.getElementById('menuToggle');
     const nav = document.getElementById('navLinks');
 
     toggle.addEventListener('click', () => {
       nav.classList.toggle('open');
+    });
+
+    // Form submission handling
+    const form = document.getElementById('emailForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Disable button to prevent double submission
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          // Show success message
+          successMessage.classList.add('show');
+          form.reset();
+          submitBtn.textContent = 'Get Notified';
+          submitBtn.disabled = false;
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Oops! There was a problem. Please try again.');
+        submitBtn.textContent = 'Get Notified';
+        submitBtn.disabled = false;
+      }
     });
   </script>
 
